@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<html class="no-js" lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:remove="tag">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta content="Sistema Web para la unidad académica de consejo de Facultad UNSCH" name="description">
+    <meta content="Ingeniería de Sistemas-Grupo 09 " name="author">
+    <title>Sistema Software Nombramiento De Docentes</title>
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" th:href="@{/admin/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/admin/css/simple-line-icons.min.css}" />
+    <link rel="stylesheet" th:href="@{/admin/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/admin/css/uniform.default.min.css}" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <link rel="shortcut icon" th:href="@{admin/img/icono.png}" />
+</head>
+
+<body>
+    <!-- BEGIN HEADER -->
+    <div class="page-header">
+        <!-- BEGIN HEADER TOP -->
+        <div th:fragment="header" class="page-header-top">
+            <div th:replace="views/admin/layout/header"></div>
+        </div>
+        <!-- END HEADER TOP -->
+        <!-- BEGIN HEADER MENU -->
+        <div th:fragment="menu" class="page-header-menu">
+            <div th:replace="views/admin/layout/menu"></div>
+        </div>
+        <!-- END HEADER MENU -->
+    </div>
+
+    <!-- BEGIN PAGE CONTAINER -->
+    <div class="page-container">
+
+    </div>
+
+
+
+
+    <!-- BEGIN PRE-FOOTER -->
+    <div th:fragment="prefooter" class="page-prefooter">
+        <div th:replace="views/admin/layout/prefooter"></div>
+    </div>
+    <!-- END PRE-FOOTER -->
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <div class="container">
+            2016 &copy; Metronic by keenthemes. <a
+                href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes"
+                title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase
+                Metronic!</a>
+        </div>
+    </div>
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
+    </div>
+    <!-- END FOOTER -->
+
+
+    <!-- BEGIN JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    <!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+    <script th:src="@{/admin/js/jquery.min.js}"></script>
+    <script th:src="@{/admin/js/jquery-migrate.min.js}"></script>
+    <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+
+    <script th:src="@{/admin/js/jquery-ui.min.js}"></script>
+    <script th:src="@{/admin/js/bootstrap.min.js}"></script>
+    <script th:src="@{/admin/js/bootstrap-hover-dropdown.min.js}"></script>
+    <script th:src="@{/admin/js/jquery.slimscroll.min.js}"></script>
+    <script th:src="@{/admin/js/jquery.blockui.min.js}"></script>
+    <script th:src="@{/admin/js/jquery.cokie.min.js}"></script>
+    <script th:src="@{/admin/js/jquery.uniform.min.js}"></script>
+
+
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script th:src="@{/admin/js/jquery.vmap.min.js}"></script>
+    <script th:src="@{/admin/js/jquery.vmap.russia.js}"></script>
+    <script th:src="@{/admin/js/jquery.vmap.world.js}"></script>
+    <script th:src="@{/admin/js/jquery.vmap.europe.js}"></script>
+    <script th:src="@{/admin/js/jquery.vmap.germany.js}"></script>
+    <script th:src="@{/admin/js/jquery.vmap.usa.js}"></script>
+    <script th:src="@{/admin/js/jquery.vmap.sampledata.js}"></script>
+
+
+    <!-- IMPORTANT! fullcalendar depends on jquery-ui.min.js for drag & drop support -->
+    <script th:src="@{/admin/js/morris.min.js}"></script>
+    <script th:src="@{/admin/js/raphael-min.js}"></script>
+    <script th:src="@{/admin/js/jquery.sparkline.min.js}"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script th:src="@{/admin/js/metronic.js}"></script>
+    <script th:src="@{/admin/js/layout.js}"></script>
+    <script th:src="@{/admin/js/quick-sidebar.js}"></script>
+    <script th:src="@{/admin/js/demo.js}"></script>
+    <script th:src="@{/admin/js/index3.js}"></script>
+    <script th:src="@{/admin/js/tasks.js}"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <script>
+        jQuery(document).ready(function () {
+            Metronic.init(); // init metronic core componets
+            Layout.init(); // init layout
+            Demo.init(); // init demo(theme settings page)
+            QuickSidebar.init(); // init quick sidebar
+            Index.init(); // init index page
+            Tasks.initDashboardWidget(); // init tash dashboard widget
+        });
+    </script>
+    <!-- END JAVASCRIPTS -->
+</body>
+
+</html>
