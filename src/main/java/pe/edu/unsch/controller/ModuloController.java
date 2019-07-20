@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -101,7 +102,11 @@ public class ModuloController {
 		return managerDatatables;
 	}
 	
+	@PostMapping("/registrar")
+	@ResponseBody
 	public JsonResponse registrarModulo(@RequestBody Modulo modulo) {
+		System.out.println("El nombre es:");
+		System.out.println(modulo.getNombre());
 		try {
 			moduloService.insertar(modulo);
 			jsonResponse = new JsonResponse();

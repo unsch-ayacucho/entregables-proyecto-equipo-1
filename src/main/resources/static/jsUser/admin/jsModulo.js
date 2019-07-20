@@ -111,9 +111,9 @@ $('#btnAgregar').click(function(e) {
     e.preventDefault();
     
     var path = $("#path").val();
-
+    alert(path);
     var modalModulo = $('#modalModulo');
-    modalModulo.find('form').attr('action', path + "/admin/modulo/registrar");
+    modalModulo.find('form').attr('action', path + "/admin/registrar");
     modalModulo.find('.modal-header .modal-title').html($(this).attr('title'));
     
     $('#idmodulo').val('0');
@@ -122,23 +122,25 @@ $('#btnAgregar').click(function(e) {
     modalModulo.modal('show');
 });
 
-$('input:radio').change(function() {
+$('input:checkbox').change(function() {
 	if ($("#activo").prop("checked")) {
 		$('#estado').val('1');
-		$('#activo').parent().addClass('btn-primary');
-		$('#inactivo').parent().removeClass('btn-primary');
+		//$('#activo').parent().addClass('btn-primary');
+		//$('#inactivo').parent().removeClass('btn-primary');
 	} else {
 		$('#estado').val('0');
-		$('#inactivo').parent().addClass('btn-primary');
-		$('#activo').parent().removeClass('btn-primary');
+		//$('#inactivo').parent().addClass('btn-primary');
+		//$('#activo').parent().removeClass('btn-primary');
 	}
 });
 
 $('#btnGuardar').click(function(e) {
 	var frm = $('#modalModulo form');
 	
+	var path = $("#path").val();
+	
 	var enviarCategoria = {
-		idcategoria : $('#idmodulo').val(),
+		//idcategoria : $('#idmodulo').val(),
 		nombre : $('#nombre').val(),
 		icono : $('#icono').val(),
 		estado : $('#estado').val()
@@ -150,18 +152,22 @@ $('#btnGuardar').click(function(e) {
         jsonToDivError(dataResponse, '#modalModulo #divMessage');
         return;
     }
-	
+	console.log(enviarCategoria);
+	console.log(dataResponse);
+	//alert(frm.attr("action"));
 	$.ajax({
-		url : frm.attr("action"),
+		url : path + frm.attr("action"),
 		data : JSON.stringify(enviarCategoria),
 		type : "POST",
 		dataType : 'json',
 		contentType : 'application/json',
 		success : function(dataResponse) {
+			console.log(path)
 			$('#formModulo').trigger("reset");
 
 			if (jsonToDivError(dataResponse, '#modalModulo #divMessage', path)) {
 				recargarModulos();
+				console.log(path)
 			}
 		}
 	});

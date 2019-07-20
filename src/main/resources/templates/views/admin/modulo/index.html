@@ -515,7 +515,7 @@
 											<h4 class="modal-title">Agregar Modulo</h4>
 										</div>
 										<div class="modal-body">
-											<form id="formModulo" class="form-horizontal form-label-left">
+											<form id="formModulo" class="form-horizontal form-label-left" method="post">
 												<div class="form-group">
 													<label class="control-label col-md-3 col-sm-3 col-xs-12">Nombre</label>
 													<div class="input-group col-md-6 col-sm-6 col-xs-12">
@@ -557,6 +557,8 @@
 																	class="box"></span> Activo
 																</label>
 															</div>
+															<input type="hidden" id="estado" />
+															<input type="hidden" id="idmodulo" />
 														</div>
 													</div>
 												</div>
@@ -632,6 +634,7 @@
 
 	<script th:src="@{/admin/js/validator.js}"></script>
 	<script th:src="@{/jsUser/admin/jsModulo.js}"></script>
+	<script th:src="@{/jsUser/admin/jsClient.js}"></script>
 </body>
 <!-- END BODY -->
 </html>
